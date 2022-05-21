@@ -1,0 +1,74 @@
+#eyeButton{
+    -fx-image: url("../images/eye.png");
+}
+
+#eyeButton:hover{
+    -fx-cursor: hand;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-scale-z: 1.05;
+}
+
+#eyeOpenButton{
+    -fx-image: url("../images/eye_open.png");
+}
+
+#eyeOpenButton:hover{
+    -fx-cursor: hand;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-scale-z: 1.05;
+}
+
+#warningLabel {
+    -fx-text-fill: "red";
+}
+
+#lostPasswordLabel:hover{
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+#loginButton{
+    -fx-background-radius: 21px;
+    -fx-background-color: #E3A80F; /*#FFBA0A;*/
+    -fx-effect: dropshadow(three-pass-box,rgba(0, 0, 0, 0.25), 0, 0, 2, 2);
+}
+
+#loginButton:hover{
+    -fx-cursor: hand;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-scale-z: 1.05;
+    -fx-border-radius: 21px;
+    -fx-border-color: rgba(0, 0, 0, 0.29);
+    -fx-background-color: #dca823;
+}
+
+#Error{
+    -fx-border-color: "red";
+}
+
+#Default{
+    -fx-border-color: "gray";
+}
+
+#Background{
+    -fx-background-color: #FFE7AA;
+}
+
+#backgroundSecondary{
+    -fx-background-color: #FFD057;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-color: rgba(0, 0, 0, 0.09);
+    -fx-effect: dropshadow(three-pass-box,rgba(0, 0, 0, 0.25), 0, 0, 3, 3);
+}
+
+.text-field{
+    -fx-background-color: #F3F3F3;
+    -fx-border-radius: 21px;
+    -fx-background-radius: 30px;
+    -fx-effect: dropshadow(three-pass-box,rgba(0, 0, 0, 0.25), 0, 0, 2, 2);
+}

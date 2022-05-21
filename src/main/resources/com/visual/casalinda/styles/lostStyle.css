@@ -1,0 +1,31 @@
+#Background{
+    -fx-background-radius: 32px;
+    -fx-background-color: #F0F0F0;
+    -fx-border-color: black;
+    -fx-border-radius: 32px;
+    -fx-border-width: 15px;
+}
+
+.text-field{
+    -fx-background-color: #F3F3F3;
+    -fx-border-radius: 21px;
+    -fx-border-color: rgba(0, 0, 0, 0.2);
+    -fx-background-radius: 30px;
+    -fx-effect: dropshadow(three-pass-box,rgba(0, 0, 0, 0.25), 0, 0, 2, 2);
+}
+
+.button{
+    -fx-background-radius: 21px;
+    -fx-background-color: #E3A80F; /*#FFBA0A;*/
+    -fx-effect: dropshadow(three-pass-box,rgba(0, 0, 0, 0.25), 0, 0, 2, 2);
+}
+
+.button:hover {
+    -fx-cursor: hand;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-scale-z: 1.05;
+    -fx-border-radius: 21px;
+    -fx-border-color: rgba(0, 0, 0, 0.29);
+    -fx-background-color: #dca823;
+}
