@@ -1,6 +1,4 @@
 package com.visual.casalinda;
-
-import javax.mail.*
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -16,7 +14,7 @@ public class LostPassword {
     @FXML
     private Button searchButton;
 
-    void sendEmail{
+   /* void sendEmail{
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
@@ -29,5 +27,5 @@ public class LostPassword {
         Session session = Session.getInstance(properties, new Authenticator(){
         LostPassword emaikl
         };
-    }
+    }*/
 }
