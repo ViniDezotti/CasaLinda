@@ -1,7 +1,10 @@
 package com.visual.casalinda;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -10,6 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class LoginScreen {
     @FXML
@@ -26,6 +30,13 @@ public class LoginScreen {
 
     @FXML
     private Label warningLabel;
+
+    @FXML
+    private Stage stage;
+
+    @FXML
+    private Scene scene;
+
     private String Password = "aaa";
 
     private String User = "admin";
@@ -35,6 +46,19 @@ public class LoginScreen {
         passwordField.setId(style);
         userField.setId(style);
         showPasswordField.setId(style);
+    }
+
+    @FXML
+    public void afterLogin() {
+        try{
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("menu-view.fxml")));
+            stage = (Stage) userField.getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch(IOException ignored){
+        }
     }
 
     @FXML
@@ -51,7 +75,7 @@ public class LoginScreen {
             warningLabel.setText("Preencha os campos vazios.");
             changeStyle("Error");
         } else if (checkLogin(checkPass, checkUser)) {
-            //Tela logada
+            afterLogin();
             System.out.println("logado"); //Apagar quando finalizar
             return;
         } else warningLabel.setText("Usuário ou senha incorreta.");
@@ -61,41 +85,27 @@ public class LoginScreen {
 
     boolean checkLogin(String checkPass, String checkUser) {
         warningLabel.setVisible(false);
-        if (checkPass.equals(Password) && checkUser.equals(User)) {
-            return true;
-        } else {
-            return false;
-        }
+        return checkPass.equals(Password) && checkUser.equals(User);
     }
 
     @FXML
     void enablePassword() { //Usuario solicita para mostrar senha
         if (passwordField.isVisible()) {
-            eyeButton.setId("Button_Eye");
+            System.out.println("mostrar");
+            //eyeButton.setId("eyeButton");
+            eyeButton.setId("eyeOpenButton");
             passwordField.setVisible(false);
             showPasswordField.setText(String.valueOf(passwordField.getText()));
             showPasswordField.setVisible(true);
-        }
-        else { //Usuario solicita para ocultar senha
-            eyeButton.setId("Button_EyeOpen");
+        } else { //Usuario solicita para ocultar senha
+            System.out.println("ocultar");
+            //eyeButton.setId("eyeOpenButton");
+            eyeButton.setId("eyeButton");
             passwordField.setVisible(true);
             passwordField.setText(passwordField.getText());
             showPasswordField.setVisible(false);
         }
     }
-
-    /*@FXML
-    void changeScreen(){
-        try{
-            Parent root = FXMLLoader.load(getClass().getResource("fxml/Menu.fxml"));
-            stage = (Stage) iniciar.getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        }
-        catch(IOException e){
-        }
-    }*/
 
     @FXML
     void forgotPassowrd() throws IOException {
