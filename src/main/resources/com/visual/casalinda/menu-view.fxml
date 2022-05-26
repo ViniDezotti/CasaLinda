@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.casalinda.MenuController">
-
-
-    <TextField />
-    <PasswordField />
-
-    <stylesheets>
-        <URL value="@styles/styles.css" />
-    </stylesheets>
-
-</BorderPane>
+<AnchorPane fx:id="Background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" styleClass="Bar" stylesheets="@styles/menuStyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.casalinda.MenuController">
+   <children>
+      <AnchorPane fx:id="TopBar" prefHeight="50.0" prefWidth="1080.0" styleClass="Bar" />
+      <AnchorPane fx:id="leftBar" layoutY="50.0" prefHeight="670.0" prefWidth="50.0" styleClass="Bar">
+         <children>
+            <VBox layoutY="35.0" prefHeight="302.0" prefWidth="47.0" AnchorPane.leftAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/home.png" />
+                     </image></ImageView>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+      <AnchorPane layoutX="50.0" layoutY="50.0" prefHeight="670.0" prefWidth="200.0" styleClass="Bar">
+         <children>
+            <VBox layoutY="40.0" prefHeight="302.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="216.0" styleClass="Cat" text="Button" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
