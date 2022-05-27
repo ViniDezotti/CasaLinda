@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane fx:id="Background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" styleClass="Bar" stylesheets="@styles/menuStyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.casalinda.MenuController">
    <children>
-      <AnchorPane fx:id="TopBar" prefHeight="50.0" prefWidth="1080.0" styleClass="Bar" />
-      <AnchorPane fx:id="leftBar" layoutY="50.0" prefHeight="670.0" prefWidth="50.0" styleClass="Bar">
+      <AnchorPane fx:id="TopBar" prefHeight="50.0" prefWidth="1080.0" styleClass="Bar">
+         <children>
+            <ImageView fx:id="menu" fitHeight="47.0" fitWidth="47.0" layoutX="6.0" layoutY="2.0" onMouseClicked="#menuActivate" pickOnBounds="true" preserveRatio="true" styleClass="Images">
+               <image>
+                  <Image url="@images/bars.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <AnchorPane fx:id="leftBar" layoutY="50.0" prefHeight="670.0" prefWidth="56.0" styleClass="Bar">
          <children>
             <VBox layoutY="35.0" prefHeight="302.0" prefWidth="47.0" AnchorPane.leftAnchor="0.0">
                <children>
@@ -15,14 +24,107 @@
                      <image>
                         <Image url="@images/home.png" />
                      </image></ImageView>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/product.png" />
+                     </image>
+                  </ImageView>
                </children>
             </VBox>
          </children></AnchorPane>
-      <AnchorPane layoutX="50.0" layoutY="50.0" prefHeight="670.0" prefWidth="200.0" styleClass="Bar">
+      <AnchorPane fx:id="pane1" layoutX="323.0" layoutY="192.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="pane2" layoutX="50.0" layoutY="50.0" onMouseClicked="#menuDeactivate" prefHeight="670.0" prefWidth="200.0" styleClass="Bar">
          <children>
-            <VBox layoutY="40.0" prefHeight="302.0" prefWidth="200.0">
+            <VBox layoutY="35.0" prefHeight="635.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="216.0" styleClass="Cat" text="Button" />
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="216.0" styleClass="Cat" text="Página Inicial">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button alignment="TOP_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="216.0" styleClass="Cat" text="Alterar produtos">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="9.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button alignment="TOP_LEFT" layoutX="10.0" layoutY="64.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="216.0" styleClass="Cat" text="Adicionar produto">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button alignment="TOP_LEFT" layoutX="10.0" layoutY="114.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="216.0" styleClass="Cat" text="Remover produto">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button alignment="TOP_LEFT" layoutX="10.0" layoutY="164.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="216.0" styleClass="Cat" text="Logout">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="392.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="leftBar1" layoutY="50.0" prefHeight="670.0" prefWidth="50.0" styleClass="Bar">
+         <children>
+            <VBox layoutY="35.0" prefHeight="635.0" prefWidth="52.0" AnchorPane.leftAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" styleClass="Images">
+                     <image>
+                        <Image url="@images/home.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="6.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" styleClass="Images">
+                     <image>
+                        <Image url="@images/product.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="6.0" top="8.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" styleClass="Images">
+                     <image>
+                        <Image url="@images/plus.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="7.0" top="8.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="17.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" styleClass="Images">
+                     <image>
+                        <Image url="@images/minus.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="9.0" top="8.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="19.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true" styleClass="Images">
+                     <image>
+                        <Image url="@images/sign-out.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="9.0" top="390.0" />
+                     </VBox.margin>
+                  </ImageView>
                </children>
             </VBox>
          </children>

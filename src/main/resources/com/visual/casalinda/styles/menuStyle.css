@@ -1,9 +1,25 @@
 #Background{
-    -fx-background-color: #FFF8E8;
+    -fx-background-color: #fdf9f0;
 }
 
 .Bar{
     -fx-background-color: #FFD057;
 }
 
+.Cat{
+    -fx-background-color: #FFD057;
+}
+
+.Cat:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #fac140;
+}
+
+.Images:hover{
+    -fx-background-color: #fac140;
+    -fx-cursor: hand;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-scale-z: 1.05;
+}
 
