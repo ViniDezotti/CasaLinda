@@ -57,7 +57,8 @@ public class LoginScreen {
             stage.setScene(scene);
             stage.show();
         }
-        catch(IOException ignored){
+        catch(IOException e){
+            e.printStackTrace();
         }
     }
 

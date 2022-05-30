@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.casalinda.test1" prefHeight="670" prefWidth="1026">
+   <Label layoutX="21.0" layoutY="14.0" prefHeight="25.0" prefWidth="96.0" text="Produto:">
+      <font>
+         <Font name="Segoe UI Black" size="16.0" />
+      </font>
+   </Label>
+   <Label layoutX="17.0" layoutY="187.0" prefHeight="25.0" prefWidth="200.0" text="Quantidade disponivel:">
+      <font>
+         <Font name="Segoe UI Black" size="16.0" />
+      </font>
+   </Label>
+   <Label layoutX="21.0" layoutY="104.0" prefHeight="25.0" prefWidth="200.0" text="Categoria: ">
+      <font>
+         <Font name="Segoe UI Black" size="16.0" />
+      </font>
+   </Label>
+   <Label layoutX="270.0" layoutY="14.0" prefHeight="25.0" prefWidth="200.0" text="Descrição:">
+      <font>
+         <Font name="Segoe UI Black" size="16.0" />
+      </font>
+   </Label>
+   <Label layoutX="551.0" layoutY="14.0" prefHeight="25.0" prefWidth="200.0" text="Valor venda:">
+      <font>
+         <Font name="Segoe UI Black" size="16.0" />
+      </font>
+   </Label>
+   <Label layoutX="551.0" layoutY="104.0" prefHeight="25.0" prefWidth="200.0" text="Valor compra:">
+      <font>
+         <Font name="Segoe UI Black" size="16.0" />
+      </font>
+   </Label>
+</Pane>
