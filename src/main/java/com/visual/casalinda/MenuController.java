@@ -61,7 +61,7 @@ public class MenuController implements Initializable {
        translateTransition.play();
 
        try {
-           Parent fxml = FXMLLoader.load(getClass().getResource("test1-view.fxml"));
+           Parent fxml = FXMLLoader.load(getClass().getResource("home-view.fxml"));
            contentArea.getChildren().removeAll();
            contentArea.getChildren().setAll(fxml);
        }catch (IOException e){
@@ -113,13 +113,13 @@ public class MenuController implements Initializable {
    }
 
     public void home() throws IOException{
-        Parent fxml = FXMLLoader.load(getClass().getResource("test1-view.fxml"));
+        Parent fxml = FXMLLoader.load(getClass().getResource("home-view.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }
 
     public void products() throws IOException{
-        Parent fxml = FXMLLoader.load(getClass().getResource("test2-view.fxml"));
+        Parent fxml = FXMLLoader.load(getClass().getResource("products-view.fxml"));
         contentArea.getChildren().removeAll();
         contentArea.getChildren().setAll(fxml);
     }

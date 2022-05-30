@@ -1,4 +1,4 @@
 package com.visual.casalinda;
 
-public class test1 {
+public class homeController {
 }

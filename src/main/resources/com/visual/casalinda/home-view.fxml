@@ -7,7 +7,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.casalinda.test1" prefHeight="670" prefWidth="1026">
+<Pane xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.visual.casalinda.homeController"
+      prefHeight="670" prefWidth="1026">
    <Label layoutX="21.0" layoutY="14.0" prefHeight="25.0" prefWidth="96.0" text="Produto:">
       <font>
          <Font name="Segoe UI Black" size="16.0" />
