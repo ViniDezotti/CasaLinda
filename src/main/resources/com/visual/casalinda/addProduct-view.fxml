@@ -1,14 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<Pane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.visual.casalinda.AddProductController"
-            prefHeight="670" prefWidth="1026">
-
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<Pane prefHeight="670" prefWidth="1026" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.casalinda.AddProductController">
+   <children>
+      <Label layoutX="72.0" layoutY="86.0" prefHeight="21.0" prefWidth="137.0" text="Nome:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="115.0" prefHeight="21.0" prefWidth="137.0" text="Código:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="145.0" prefHeight="21.0" prefWidth="137.0" text="Descrição:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="348.0" layoutY="86.0" prefHeight="21.0" prefWidth="137.0" text="Quantidade:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="348.0" layoutY="115.0" prefHeight="21.0" prefWidth="137.0" text="Categoria:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="642.0" layoutY="86.0" prefHeight="21.0" prefWidth="137.0" text="Preço de compra:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="642.0" layoutY="115.0" prefHeight="21.0" prefWidth="137.0" text="Preço de venda:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="descArea" layoutX="147.0" layoutY="145.0" prefHeight="117.0" prefWidth="183.0" />
+      <TextField fx:id="nameField" layoutX="147.0" layoutY="84.0" prefHeight="25.0" prefWidth="183.0" />
+      <TextField fx:id="codField" layoutX="147.0" layoutY="113.0" prefHeight="25.0" prefWidth="183.0" />
+      <TextField fx:id="qtdField" layoutX="440.0" layoutY="84.0" prefHeight="25.0" prefWidth="183.0" />
+      <TextField fx:id="buyField" layoutX="771.0" layoutY="84.0" prefHeight="25.0" prefWidth="183.0" />
+      <TextField fx:id="sellField" layoutX="771.0" layoutY="113.0" prefHeight="25.0" prefWidth="183.0" />
+      <Button fx:id="addButton" layoutX="448.0" layoutY="352.0" mnemonicParsing="false" onAction="#insertProduct" prefHeight="47.0" prefWidth="97.0" text="Adicionar" />
+      <ComboBox fx:id="catBox" layoutX="437.0" layoutY="113.0" prefHeight="25.0" prefWidth="183.0">
+      <items>
+         <FXCollections fx:factory="observableArrayList">
+            <String fx:value="Quarto"/>
+            <String fx:value="Banheiro"/>
+            <String fx:value="Cozinha"/>
+            <String fx:value="Quintal"/>
+            <String fx:value="Sala"/>
+            <String fx:value="Outros"/>
+         </FXCollections>
+      </items>
+      </ComboBox>
+   </children>
 </Pane>
