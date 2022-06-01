@@ -29,6 +29,7 @@ public class Product {
         this.outPrice = 0;
         productList.add(this);
 
+
         for(Product p: productList){
             System.out.println(p.toString());
         }
