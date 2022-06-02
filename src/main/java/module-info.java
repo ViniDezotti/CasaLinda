@@ -6,6 +6,7 @@ module com.visual.casalinda {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires javax.persistence;
+    requires java.sql;
 
     opens com.visual.casalinda to javafx.fxml;
     exports com.visual.casalinda;

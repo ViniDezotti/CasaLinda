@@ -24,8 +24,11 @@ public class AddProductController {
     TextField qtdField;
 
     public void insertProduct() {
-        new Product(nameField.getText(), codField.getText(), descArea.getText(),
+        Product product = new Product(nameField.getText(), codField.getText(), descArea.getText(),
                 qtdField.getText(), catBox.getSelectionModel().getSelectedItem().toString());
+
+        ProductsSQL productsSQL = new ProductsSQL();
+        productsSQL.insertProduct(product);
 
         nameField.clear();
         codField.clear();

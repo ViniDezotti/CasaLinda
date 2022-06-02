@@ -57,6 +57,8 @@ public class MenuController implements Initializable {
         translateTransition.setByX(-600);
         translateTransition.play();
 
+
+
         try {
             Parent fxml = FXMLLoader.load(getClass().getResource("home-view.fxml"));
             contentArea.getChildren().removeAll();

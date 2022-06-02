@@ -2,6 +2,7 @@ package com.visual.casalinda;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Product {
 
@@ -12,6 +13,8 @@ public class Product {
     private float inputPrice; //valor de entrada do produto
     private float outPrice; // valor de saida
     private String category;
+    private final Random randomGen = new Random();
+    private final StringBuffer stringBuffer = new StringBuffer();
 
     public static List<Product> productList = new ArrayList<>();
 
@@ -21,7 +24,7 @@ public class Product {
             //fazer excessao
         }
         this.name = productName;
-        this.code = productCode;
+        this.code = String.valueOf(generateCode());
         this.description = productDescription;
         this.quantity = Integer.parseInt(productQuantity);
         this.category = productCategory;
@@ -110,5 +113,15 @@ public class Product {
                 ", quantity=" + quantity +
                 ", category='" + category + '\'' +
                 '}';
+    }
+    public StringBuffer generateCode() {
+        for (int i = 0; i < 4; i++) {
+            int nextRandomChar = 65
+                    + (int) (randomGen.nextFloat()
+                    * (90 - 65 + 1));
+            stringBuffer.append((char) nextRandomChar);
+        }
+        stringBuffer.append(randomGen.nextInt(9));
+        return stringBuffer;
     }
 }
