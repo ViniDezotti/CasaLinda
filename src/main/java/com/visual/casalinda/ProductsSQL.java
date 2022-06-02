@@ -34,10 +34,18 @@ public class ProductsSQL {
 
     public ResultSet<Product> SearchProdutct(){
         String select = "SELECT * FROM product";
-        connection = DatabaseConnection.getConnection();
 
         try{
+            statement = connection.prepareStatement(select);
+            resultSet = statement.executeQuery();
 
+            while (resultSet.next()){
+                Product product = new Product();
+                product.setName(resultSet.getString("name"));
+                product.setDescription(resultSet.getString("description"));
+                product.setQuantity(resultSet.getInt("quantity"));
+                product.setCategory(resultSet.getString("category"));
+            }
         }catch (Exception e){
 
         }

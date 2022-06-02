@@ -23,7 +23,7 @@ public class InputMovement {
         for (Product p : Product.productList) {
             if (p.getCode().equals(productCode)) {
                 p.setInputPrice(Float.parseFloat(inputValue)); //seta o valor de entrada
-                p.setQuantity(Integer.parseInt(quantity), 0); //adicionar quantidade
+                p.setQuantity(Integer.parseInt(quantity)); //adicionar quantidade
             }
         }
 

@@ -18,25 +18,25 @@ public class Product {
 
     public static List<Product> productList = new ArrayList<>();
 
-    public Product(String productName, String productCode, String productDescription,
-                   String productQuantity, String productCategory) {
-        if (!(Integer.parseInt(productQuantity) > 0)) {
-            //fazer excessao
-        }
+    public Product (String productName, String productDescription, int productQuantity, String productCategory) {
         this.name = productName;
         this.code = String.valueOf(generateCode());
         this.description = productDescription;
-        this.quantity = Integer.parseInt(productQuantity);
+        this.quantity = productQuantity;
         this.category = productCategory;
-        this.inputPrice = 0;// deixar os dois campos setados como 0 ate que haja uma movimentacao
+        this.inputPrice = 0;
         this.outPrice = 0;
         productList.add(this);
-
 
         for(Product p: productList){
             System.out.println(p.toString());
         }
     }
+
+    public addProduct() {
+
+    }
+
 
     public String getName() {
         return name;
@@ -66,16 +66,8 @@ public class Product {
         return quantity;
     }
 
-    public void setQuantity(int quantity, int flag) { //abrir janela q n é possivel ter quantidade negativa na segunda tela
-
-        if (flag == 0) {
-            this.quantity += quantity;
-        } else if (flag == 1) {
-            if (!(this.quantity - quantity > 0)) {
-                System.out.println("Nao eh possiver ter quantidade negativa");
-                //throw new Exception(); ????
-            } else this.quantity -= quantity;
-        }
+    public void setQuantity(int quantity) { //abrir janela q n é possivel ter quantidade negativa na segunda tela
+        this.quantity = quantity;
     }
 
     public String getCategory() {
@@ -102,6 +94,18 @@ public class Product {
 
     public void setOutPrice(float outPrice) {
         this.outPrice = outPrice;
+    }
+
+    public void addQuantity(int value){
+        this.quantity += value;
+    }
+
+    public boolean removeQuantity(int value){
+        if((this.quantity -= value) >= 0){
+            this.quantity -= value;
+            return true;
+        }
+        else return false;
     }
 
     @Override

@@ -21,7 +21,7 @@ public class OutMovement {
         for (Product p : Product.productList) {
             if (p.getCode().equals(productCode)) {
                 p.setOutPrice(Float.parseFloat(outValue));
-                p.setQuantity(Integer.parseInt(quantity), 1);
+                p.setQuantity(Integer.parseInt(quantity));
             }
         }
         this.outMovementCode = outMovementCode;
@@ -71,6 +71,5 @@ public class OutMovement {
     public void setOutValue(float outValue) {
         this.outValue = outValue;
     }
-
 
 }
