@@ -4,12 +4,15 @@ import com.visual.casalinda.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class ProductsSQL {
     Connection connection;
     PreparedStatement statement;
 
     ResultSet resultSet;
+
+    ArrayList<Product> lista = new ArrayList<>();
 
     public void insertProduct(Product product){
         String insert = "INSERT INTO product (code,name,quantity,description,category) VALUES (?, ?, ?, ?, ?)";
@@ -32,9 +35,9 @@ public class ProductsSQL {
         }
     }
 
-    public ResultSet<Product> SearchProdutct(){
+    public ArrayList<Product> SearchProduct(){
         String select = "SELECT * FROM product";
-
+        connection = DatabaseConnection.getConnection();
         try{
             statement = connection.prepareStatement(select);
             resultSet = statement.executeQuery();
@@ -42,12 +45,15 @@ public class ProductsSQL {
             while (resultSet.next()){
                 Product product = new Product();
                 product.setName(resultSet.getString("name"));
-                product.setDescription(resultSet.getString("description"));
+                product.setCode(resultSet.getString("code"));
                 product.setQuantity(resultSet.getInt("quantity"));
+                product.setDescription(resultSet.getString("description"));
                 product.setCategory(resultSet.getString("category"));
+                lista.add(product);
             }
         }catch (Exception e){
-
+            e.printStackTrace();
         }
+        return lista;
     }
 }

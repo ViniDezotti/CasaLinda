@@ -18,23 +18,20 @@ public class Product {
 
     public static List<Product> productList = new ArrayList<>();
 
-    public Product (String productName, String productDescription, int productQuantity, String productCategory) {
+    public void Product(){
+
+    }
+
+    public void addProduct(String productName, String productDescription, int productQuantity, String productCategory){
         this.name = productName;
-        this.code = String.valueOf(generateCode());
+        this.code = generateCode();
+        System.out.println(code);
         this.description = productDescription;
         this.quantity = productQuantity;
         this.category = productCategory;
         this.inputPrice = 0;
         this.outPrice = 0;
         productList.add(this);
-
-        for(Product p: productList){
-            System.out.println(p.toString());
-        }
-    }
-
-    public addProduct() {
-
     }
 
 
@@ -118,14 +115,10 @@ public class Product {
                 ", category='" + category + '\'' +
                 '}';
     }
-    public StringBuffer generateCode() {
-        for (int i = 0; i < 4; i++) {
-            int nextRandomChar = 65
-                    + (int) (randomGen.nextFloat()
-                    * (90 - 65 + 1));
-            stringBuffer.append((char) nextRandomChar);
-        }
-        stringBuffer.append(randomGen.nextInt(9));
-        return stringBuffer;
+    public String generateCode() {
+        String code;
+        Random random = new Random();
+        code = String.valueOf(random.nextInt(9999));
+        return code;
     }
 }

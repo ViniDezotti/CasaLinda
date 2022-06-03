@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.*?>
-<Pane xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.visual.casalinda.HomeController"
-      prefHeight="670" prefWidth="1026">
-   <Label layoutX="21.0" layoutY="14.0" prefHeight="25.0" prefWidth="96.0" text="Produto:">
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="Background" prefHeight="670" prefWidth="1026" stylesheets="@styles/screens.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.casalinda.HomeController">
+   <TableView fx:id="table" layoutX="95.0" layoutY="84.0" prefHeight="367.0" prefWidth="836.0">
+     <columns>
+       <TableColumn fx:id="nameColumn" prefWidth="129.0" text="Nome" />
+       <TableColumn fx:id="codeColumn" text="Código" />
+         <TableColumn fx:id="quantityColumn" prefWidth="78.0" text="Quantidade" />
+         <TableColumn fx:id="descColumn" prefWidth="433.0" text="Descrição" />
+         <TableColumn fx:id="categoryColumn" prefWidth="115.0" text="Categoria" />
+     </columns>
+   </TableView>
+   <Pane fx:id="infoPane" layoutX="95.0" layoutY="497.0" prefHeight="120.0" prefWidth="836.0" stylesheets="@styles/screens.css">
+      <children>
+         <Label layoutX="28.0" layoutY="14.0" styleClass="infoLabel" text="Valor movimentado no dia" />
+         <Label layoutX="368.0" layoutY="14.0" styleClass="infoLabel" text="Lucro do dia" />
+         <Label layoutX="603.0" layoutY="14.0" styleClass="infoLabel" text="Número de vendas no dia" />
+         <Label fx:id="valueLabel" layoutX="47.0" layoutY="40.0" styleClass="valuesLabel" text="R$ 50000" />
+         <Label fx:id="profitLabel" layoutX="330.0" layoutY="40.0" styleClass="valuesLabel" text="R$ 50000" />
+         <Label fx:id="sellsLabel" layoutX="694.0" layoutY="40.0" styleClass="valuesLabel" text="0" />
+      </children>
+   </Pane>
+   <RadioButton fx:id="productButton" layoutX="380.0" layoutY="14.0" mnemonicParsing="false" selected="true" text="Produto">
       <font>
-         <Font name="Segoe UI Black" size="16.0" />
+         <Font name="System Bold" size="14.0" />
       </font>
-   </Label>
-   <Label layoutX="17.0" layoutY="187.0" prefHeight="25.0" prefWidth="200.0" text="Quantidade disponivel:">
+   </RadioButton>
+   <RadioButton fx:id="categoryButton" layoutX="523.0" layoutY="14.0" mnemonicParsing="false" text="Categoria">
       <font>
-         <Font name="Segoe UI Black" size="16.0" />
+         <Font name="System Bold" size="14.0" />
       </font>
-   </Label>
-   <Label layoutX="21.0" layoutY="104.0" prefHeight="25.0" prefWidth="200.0" text="Categoria: ">
-      <font>
-         <Font name="Segoe UI Black" size="16.0" />
-      </font>
-   </Label>
-   <Label layoutX="270.0" layoutY="14.0" prefHeight="25.0" prefWidth="200.0" text="Descrição:">
-      <font>
-         <Font name="Segoe UI Black" size="16.0" />
-      </font>
-   </Label>
-   <Label layoutX="551.0" layoutY="14.0" prefHeight="25.0" prefWidth="200.0" text="Valor venda:">
-      <font>
-         <Font name="Segoe UI Black" size="16.0" />
-      </font>
-   </Label>
-   <Label layoutX="551.0" layoutY="104.0" prefHeight="25.0" prefWidth="200.0" text="Valor compra:">
-      <font>
-         <Font name="Segoe UI Black" size="16.0" />
-      </font>
-   </Label>
+   </RadioButton>
 </Pane>

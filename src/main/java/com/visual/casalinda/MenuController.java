@@ -125,7 +125,7 @@ public class MenuController implements Initializable {
         try {
             searchField.setVisible(true);
             searchButton.setVisible(true);
-            Parent fxml = FXMLLoader.load(getClass().getResource("products-view.fxml"));
+            Parent fxml = FXMLLoader.load(getClass().getResource("product-view.fxml"));
             contentArea.getChildren().removeAll();
             contentArea.getChildren().setAll(fxml);
         } catch (IOException e) {
@@ -133,11 +133,23 @@ public class MenuController implements Initializable {
         }
     }
 
-    public void addProducts() {
+    public void transations() {
         try {
             searchField.setVisible(false);
             searchButton.setVisible(false);
-            Parent fxml = FXMLLoader.load(getClass().getResource("addProduct-view.fxml"));
+            Parent fxml = FXMLLoader.load(getClass().getResource("transations-view.fxml"));
+            contentArea.getChildren().removeAll();
+            contentArea.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void historic() {
+        try {
+            searchField.setVisible(false);
+            searchButton.setVisible(false);
+            Parent fxml = FXMLLoader.load(getClass().getResource("historic-view.fxml"));
             contentArea.getChildren().removeAll();
             contentArea.getChildren().setAll(fxml);
         } catch (IOException e) {
