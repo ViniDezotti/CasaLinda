@@ -1,6 +1,5 @@
 package com.visual.casalinda;
 
-import com.visual.casalinda.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -50,6 +49,7 @@ public class ProductsSQL {
                 product.setDescription(resultSet.getString("description"));
                 product.setCategory(resultSet.getString("category"));
                 lista.add(product);
+                System.out.println(lista);
             }
         }catch (Exception e){
             e.printStackTrace();

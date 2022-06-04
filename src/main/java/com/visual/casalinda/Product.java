@@ -13,13 +13,10 @@ public class Product {
     private float inputPrice; //valor de entrada do produto
     private float outPrice; // valor de saida
     private String category;
-    private final Random randomGen = new Random();
-    private final StringBuffer stringBuffer = new StringBuffer();
 
     public static List<Product> productList = new ArrayList<>();
 
     public void Product(){
-
     }
 
     public void addProduct(String productName, String productDescription, int productQuantity, String productCategory){
@@ -75,18 +72,10 @@ public class Product {
         this.category = category;
     }
 
-    public float getInputPrice() {
-        return inputPrice;
-    }
-
     public void setInputPrice(float inputPrice) {
         if (!(inputPrice > 0)) {
             //fazer excessao
         } else this.inputPrice = inputPrice;
-    }
-
-    public float getOutPrice() {
-        return outPrice;
     }
 
     public void setOutPrice(float outPrice) {

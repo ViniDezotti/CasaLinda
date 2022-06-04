@@ -31,4 +31,17 @@ public class ProductController implements Initializable {
         stage.setResizable(false);
         stage.show();
     }
+
+    @FXML
+    void editProduct() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("editProduct-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 334, 478);
+        Stage stage = new Stage();
+        stage.setTitle("Editar produto");
+        stage.setScene(scene);
+        //stage.getIcons().add(Icon);
+        stage.setResizable(false);
+        stage.show();
+    }
+
 }

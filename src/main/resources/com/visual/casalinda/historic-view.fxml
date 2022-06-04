@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane id="Background" prefHeight="670" prefWidth="1026" stylesheets="@styles/screens.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.casalinda.ProductController">
+   <children>
+      <DatePicker layoutX="267.0" layoutY="99.0" />
+      <DatePicker layoutX="564.0" layoutY="99.0" />
+      <Label layoutX="267.0" layoutY="76.0" prefHeight="17.0" prefWidth="73.0" text="Inicio" />
+      <Label layoutX="564.0" layoutY="76.0" prefHeight="17.0" prefWidth="73.0" text="Término" />
+      <RadioButton fx:id="productButton" layoutX="397.0" layoutY="150.0" mnemonicParsing="false" selected="true" text="Entrada">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="search" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="categoryButton" layoutX="540.0" layoutY="150.0" mnemonicParsing="false" text="Saída">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="search" />
+         </toggleGroup>
+      </RadioButton>
+      <TableView fx:id="table" layoutX="95.0" layoutY="195.0" prefHeight="405.0" prefWidth="836.0">
+         <columns>
+            <TableColumn prefWidth="129.0" text="Nome" />
+            <TableColumn text="Código" />
+            <TableColumn prefWidth="78.0" text="Quantidade" />
+            <TableColumn prefWidth="186.0" text="Tipo da transação" />
+            <TableColumn prefWidth="177.0" text="Valor unidade" />
+         </columns>
+      </TableView>
+   </children>
+</Pane>
