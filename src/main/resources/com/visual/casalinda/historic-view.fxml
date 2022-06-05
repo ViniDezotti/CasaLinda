@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<Pane id="Background" prefHeight="670" prefWidth="1026" stylesheets="@styles/screens.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.casalinda.HistoricController">
+<Pane id="Background" prefHeight="670" prefWidth="1026" stylesheets="@styles/screens.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.visual.casalinda.HistoricController">
    <children>
       <DatePicker layoutX="267.0" layoutY="85.0" />
       <DatePicker layoutX="564.0" layoutY="85.0" />

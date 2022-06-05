@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="Background" prefHeight="670" prefWidth="1026" stylesheets="@styles/screens.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.casalinda.HomeController">
+<Pane fx:id="Background" prefHeight="670" prefWidth="1026" stylesheets="@styles/screens.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.visual.casalinda.HomeController">
    <TableView fx:id="table" layoutX="95.0" layoutY="85.0" prefHeight="367.0" prefWidth="836.0">
      <columns>
          <TableColumn fx:id="nameColumn" prefWidth="129.0" text="Nome" />
