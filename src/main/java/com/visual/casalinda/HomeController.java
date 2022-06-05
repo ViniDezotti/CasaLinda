@@ -7,7 +7,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -26,20 +25,20 @@ public class HomeController implements Initializable {
     private TableColumn categoryColumn;
 
     @FXML
-    private TableView table;
+    public TableView table;
 
-    public ArrayList productList;
+    public ArrayList<Product> productList;
+
     public void initialize(URL location, ResourceBundle resources) {
+        showTable();
+    }
+
+    public void showTable(){
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         codeColumn.setCellValueFactory(new PropertyValueFactory<>("code"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         descColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
         categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
-        showTable();
-    }
-
-
-    public void showTable(){
         ProductsSQL productsSQL = new ProductsSQL();
         productList = productsSQL.SearchProduct();
         System.out.println(productList);

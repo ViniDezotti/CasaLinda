@@ -34,6 +34,23 @@ public class ProductsSQL {
         }
     }
 
+    public void removeProduct(Product product){
+        String insert = "DELETE FROM product WHERE code LIKE ?";
+        connection = DatabaseConnection.getConnection();
+
+        try {
+            statement = connection.prepareStatement(insert);
+            statement.setString(1, product.getCode());
+
+            statement.execute();
+            statement.close();
+            connection.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     public ArrayList<Product> SearchProduct(){
         String select = "SELECT * FROM product";
         connection = DatabaseConnection.getConnection();
