@@ -28,5 +28,6 @@ public class AddProductController {
         descArea.clear();
         catBox.getSelectionModel().clearSelection();
         qtdField.clear();
+        ProductController.getProductController().showTable();
     }
 }

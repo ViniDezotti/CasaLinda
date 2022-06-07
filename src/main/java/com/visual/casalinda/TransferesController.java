@@ -8,10 +8,10 @@ import java.util.ResourceBundle;
 
 public class TransferesController implements Initializable {
 
-    private TableView table;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
+
 
 }

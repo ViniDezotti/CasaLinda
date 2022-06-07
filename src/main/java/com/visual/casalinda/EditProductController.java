@@ -21,20 +21,17 @@ public class EditProductController implements Initializable {
     @FXML
     private TextArea descArea;
 
-    public EditProductController(Product product) {
-        nameField.setText(product.getName());
-        qtdField.setText(String.valueOf(product.getQuantity()));
-        codeField.setText(product.getCode());
-        for(int i=0; i<catBox.getItems().size(); i++) {
-            if(catBox.getItems().get(i).equals(product.getCategory()))
-                catBox.setSelectionModel((SingleSelectionModel) catBox.getItems().get(i));
-        }
-        descArea.setText(product.getDescription());
-    }
+    private Product product;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        product = ProductController.getProduct();
 
+        System.out.println(product.getName());
+        nameField.setText(product.getName());
+        qtdField.setText(String.valueOf(product.getQuantity()));
+        codeField.setText(product.getCode());
+        descArea.setText(product.getDescription());
     }
 
 }

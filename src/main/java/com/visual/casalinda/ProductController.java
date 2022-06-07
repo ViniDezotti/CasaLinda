@@ -4,7 +4,6 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -34,9 +33,13 @@ public class ProductController implements Initializable {
 
     public ArrayList<Product> productList;
 
+    private static Product product;
+
+    private static ProductController productController;
 
     public void initialize(URL location, ResourceBundle resources) {
         showTable();
+        productController = this;
     }
 
     @FXML
@@ -69,7 +72,6 @@ public class ProductController implements Initializable {
         Stage stage = new Stage();
         stage.setTitle("Adicionar produto");
         stage.setScene(scene);
-        //stage.getIcons().add(Icon);
         stage.setResizable(false);
         stage.show();
     }
@@ -77,19 +79,23 @@ public class ProductController implements Initializable {
     @FXML
     void editProduct() throws IOException {
         if(table.getSelectionModel().getSelectedItem() != null) {
-            Product productSelected = (Product) table.getSelectionModel().getSelectedItem();
+            product = (Product) table.getSelectionModel().getSelectedItem();
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("editProduct-view"));
-            loader.setController(new EditProductController(productSelected));
-            Parent root = loader.load();
-            Scene scene = new Scene(root, 334, 478);
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("editProduct-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 334, 478);
             Stage stage = new Stage();
             stage.setTitle("Editar produto");
             stage.setScene(scene);
-            //stage.getIcons().add(Icon);
             stage.setResizable(false);
             stage.show();
         }
     }
 
+    public static Product getProduct() {
+        return product;
+    }
+
+    public static ProductController getProductController() {
+        return productController;
+    }
 }
