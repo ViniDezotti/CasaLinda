@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane id="Background" prefHeight="670" prefWidth="1026" stylesheets="@styles/screens.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.visual.casalinda.HistoricController">
+<Pane id="Background" prefHeight="670" prefWidth="1026" stylesheets="@styles/screens.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.casalinda.HistoricController">
    <children>
       <DatePicker layoutX="267.0" layoutY="85.0" />
       <DatePicker layoutX="564.0" layoutY="85.0" />
@@ -42,13 +41,17 @@
       </RadioButton>
       <TableView fx:id="table" layoutX="95.0" layoutY="195.0" prefHeight="405.0" prefWidth="836.0">
          <columns>
-            <TableColumn prefWidth="129.0" text="Nome" />
-            <TableColumn text="Código" />
-            <TableColumn prefWidth="78.0" text="Quantidade" />
-            <TableColumn prefWidth="186.0" text="Tipo da transação" />
-            <TableColumn prefWidth="182.0" text="Valor unidade" />
-            <TableColumn prefWidth="180.0" text="Valor total" />
+            <TableColumn fx:id="nameColumn" prefWidth="129.0" text="Nome" />
+            <TableColumn fx:id="codeColumn" text="Código" />
+            <TableColumn fx:id="qtdColumn" prefWidth="78.0" text="Quantidade" />
+            <TableColumn fx:id="typeColumn" prefWidth="186.0" text="Tipo da transação" />
+            <TableColumn fx:id="valueColumn" prefWidth="182.0" text="Valor unidade" />
+            <TableColumn fx:id="totalColumn" prefWidth="101.0" text="Valor total" />
+            <TableColumn fx:id="dataColumn" prefWidth="259.0" text="Data" />
          </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
       </TableView>
    </children>
 </Pane>

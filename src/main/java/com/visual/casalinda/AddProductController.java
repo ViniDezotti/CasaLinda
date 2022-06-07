@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class AddProductController {
     @FXML
@@ -24,10 +25,8 @@ public class AddProductController {
         ProductsSQL productsSQL = new ProductsSQL();
         productsSQL.insertProduct(product);
 
-        nameField.clear();
-        descArea.clear();
-        catBox.getSelectionModel().clearSelection();
-        qtdField.clear();
         ProductController.getProductController().showTable();
+        Stage stage = (Stage) catBox.getScene().getWindow();
+        stage.close();
     }
 }

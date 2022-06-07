@@ -10,24 +10,19 @@ public class Product {
     private String code;
     private String description;
     private int quantity;
-    private float inputPrice; //valor de entrada do produto
-    private float outPrice; // valor de saida
     private String category;
 
     public static List<Product> productList = new ArrayList<>();
 
-    public void Product(){
+    public Product(){
     }
 
     public void addProduct(String productName, String productDescription, int productQuantity, String productCategory){
         this.name = productName;
         this.code = generateCode();
-        System.out.println(code);
         this.description = productDescription;
         this.quantity = productQuantity;
         this.category = productCategory;
-        this.inputPrice = 0;
-        this.outPrice = 0;
         productList.add(this);
     }
 
@@ -70,16 +65,6 @@ public class Product {
 
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    public void setInputPrice(float inputPrice) {
-        if (!(inputPrice > 0)) {
-            //fazer excessao
-        } else this.inputPrice = inputPrice;
-    }
-
-    public void setOutPrice(float outPrice) {
-        this.outPrice = outPrice;
     }
 
     public void addQuantity(int value){

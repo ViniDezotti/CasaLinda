@@ -3,6 +3,7 @@ package com.visual.casalinda;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -27,10 +28,13 @@ public class HomeController implements Initializable {
     @FXML
     public TableView table;
 
+    @FXML
+    private Label valueLabel, profitLabel, sellsLabel;
     public ArrayList<Product> productList;
 
     public void initialize(URL location, ResourceBundle resources) {
         showTable();
+        showValues();
     }
 
     public void showTable(){
@@ -43,5 +47,11 @@ public class HomeController implements Initializable {
         productList = productsSQL.SearchProduct();
         System.out.println(productList);
         table.setItems(FXCollections.observableArrayList(productList));
+    }
+
+    public void showValues(){
+        MovementSQL movementSQL = new MovementSQL();
+        //String text = movementSQL.
+        //valueLabel.setText();
     }
 }
