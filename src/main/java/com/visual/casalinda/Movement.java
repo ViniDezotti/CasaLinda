@@ -7,12 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Movement {
-    private Product product;
+    private String name;
+
+    private String code;
     private int quantity;
 
     private String type;
 
     private float value;
+
+    private float total;
     private Date date;
 
     private static List<Movement> movementList = new ArrayList<>();
@@ -22,20 +26,38 @@ public class Movement {
     }
 
     public void addMovement(Product product, int quantity, String type, Date date, float value) throws IOException {
-        this.product = product;
+        this.name = product.getName();
+        this.code = product.getCode();
         this.quantity = quantity;
         this.type = type;
         this.date = date;
         this.value = value;
+        this.total = value * ((float) getQuantity());
         movementList.add(this);
     }
 
-    public Product getProduct() {
-        return product;
+    public void setTotal(float total) {
+        this.total = total;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public float getTotal() {
+        return total;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getCode() {
+        return code;
     }
 
     public int getQuantity() {

@@ -1,45 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
 
 <Pane id="Background" prefHeight="670" prefWidth="1026" stylesheets="@styles/screens.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.casalinda.HistoricController">
    <children>
-      <DatePicker layoutX="267.0" layoutY="85.0" />
-      <DatePicker layoutX="564.0" layoutY="85.0" />
-      <Label layoutX="267.0" layoutY="68.0" prefHeight="17.0" prefWidth="73.0" text="Inicio">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="564.0" layoutY="68.0" prefHeight="17.0" prefWidth="73.0" text="Término">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <RadioButton fx:id="productButton" layoutX="397.0" layoutY="135.0" mnemonicParsing="false" selected="true" text="Entrada">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-         <toggleGroup>
-            <ToggleGroup fx:id="search" />
-         </toggleGroup>
-      </RadioButton>
-      <RadioButton fx:id="categoryButton" layoutX="540.0" layoutY="135.0" mnemonicParsing="false" text="Saída">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-         <toggleGroup>
-            <ToggleGroup fx:id="search" />
-         </toggleGroup>
-      </RadioButton>
-      <TableView fx:id="table" layoutX="95.0" layoutY="195.0" prefHeight="405.0" prefWidth="836.0">
+      <TableView fx:id="table" layoutX="95.0" layoutY="93.0" prefHeight="493.0" prefWidth="836.0">
          <columns>
             <TableColumn fx:id="nameColumn" prefWidth="129.0" text="Nome" />
             <TableColumn fx:id="codeColumn" text="Código" />

@@ -1,9 +1,10 @@
 package com.visual.casalinda;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import javax.xml.datatype.DatatypeConfigurationException;
+import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class MovementSQL {
     Connection connection;
@@ -11,15 +12,15 @@ public class MovementSQL {
     ResultSet resultSet;
     ArrayList<Movement> lista = new ArrayList<>();
 
-    public void registration(Movement movement){
+    public void registration(Movement movement) {
         String insert = "INSERT INTO movement (name,code,quantity,type,value_unity, value_total, date) VALUES (?, ?, ?, ?, ?, ?, ?)";
         connection = DatabaseConnection.getConnection();
 
         float total = movement.getValue() * (float) movement.getQuantity();
         try {
             statement = connection.prepareStatement(insert);
-            statement.setString(1, movement.getProduct().getName());
-            statement.setString(2, movement.getProduct().getCode());
+            statement.setString(1, movement.getName());
+            statement.setString(2, movement.getCode());
             statement.setInt(3, movement.getQuantity());
             statement.setString(4, movement.getType());
             statement.setFloat(5, movement.getValue());
@@ -28,40 +29,58 @@ public class MovementSQL {
             statement.execute();
             statement.close();
             connection.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public ArrayList<Movement> SearchProduct(){
+    public ArrayList<Movement> SearchProduct() {
         String select = "SELECT * FROM movement";
         connection = DatabaseConnection.getConnection();
-        try{
+        try {
             statement = connection.prepareStatement(select);
             resultSet = statement.executeQuery();
 
-            while (resultSet.next()){
-                Product product = new Product();
+            while (resultSet.next()) {
                 Movement movement = new Movement();
-                product.setName(resultSet.getString("name"));
-                product.setCode(resultSet.getString("code"));
-                movement.setProduct(product);
-                System.out.println(product);
+                movement.setName(resultSet.getString("name"));
+                movement.setCode(resultSet.getString("code"));
                 movement.setQuantity(resultSet.getInt("quantity"));
                 movement.setType(resultSet.getString("type"));
                 movement.setValue(resultSet.getFloat("value_unity"));
+                movement.setTotal(movement.getValue() * ((float) movement.getQuantity()));
                 movement.setDate(resultSet.getDate("date"));
                 lista.add(movement);
-                System.out.println(lista);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return lista;
     }
 
-    public void valueDay(){
+    public void valueDay() {
 
     }
 
+    public String transfersDay() {
+        String timeToday = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+        Date data =  java.sql.Date.valueOf(timeToday);
+        System.out.println(data);
+
+        String find = "SELECT COUNT (*) FROM movement WHERE date LIKE ?";
+        connection = DatabaseConnection.getConnection();
+
+        try {
+            System.out.println(resultSet);
+
+            statement = connection.prepareStatement(find);
+            statement.setDate(1, data);
+            resultSet = statement.executeQuery();
+            System.out.println(resultSet.getDate("data").toString());
+            resultSet.next();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return String.valueOf(resultSet);
+    }
 }

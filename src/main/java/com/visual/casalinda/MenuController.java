@@ -43,12 +43,6 @@ public class MenuController implements Initializable {
     @FXML
     private StackPane contentArea;
 
-    @FXML
-    private TextField searchField;
-
-    @FXML
-    private ImageView searchButton;
-
     public void initialize(URL location, ResourceBundle resources) {
         pane1.setVisible(false);
         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(0.5), pane1);
@@ -112,8 +106,6 @@ public class MenuController implements Initializable {
 
     public void home() {
         try {
-            searchField.setVisible(true);
-            searchButton.setVisible(true);
             Parent fxml = FXMLLoader.load(getClass().getResource("home-view.fxml"));
             contentArea.getChildren().removeAll();
             contentArea.getChildren().setAll(fxml);
@@ -124,8 +116,6 @@ public class MenuController implements Initializable {
 
     public void products(){
         try {
-            searchField.setVisible(true);
-            searchButton.setVisible(true);
             Parent fxml = FXMLLoader.load(getClass().getResource("product-view.fxml"));
             contentArea.getChildren().removeAll();
             contentArea.getChildren().setAll(fxml);
@@ -136,8 +126,6 @@ public class MenuController implements Initializable {
 
     public void transations() {
         try {
-            searchField.setVisible(false);
-            searchButton.setVisible(false);
             Parent fxml = FXMLLoader.load(getClass().getResource("transfers-view.fxml"));
             contentArea.getChildren().removeAll();
             contentArea.getChildren().setAll(fxml);
@@ -148,8 +136,6 @@ public class MenuController implements Initializable {
 
     public void historic() {
         try {
-            searchField.setVisible(false);
-            searchButton.setVisible(false);
             Parent fxml = FXMLLoader.load(getClass().getResource("historic-view.fxml"));
             contentArea.getChildren().removeAll();
             contentArea.getChildren().setAll(fxml);

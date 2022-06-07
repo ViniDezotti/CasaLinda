@@ -26,7 +26,10 @@ public class TransferesController implements Initializable {
     public ArrayList<Product> productList;
 
     private static Product product;
+
+    private static TransferesController transferesController;
     public void initialize(URL location, ResourceBundle resources) {
+        transferesController = this;
         showTable();
     }
     @FXML
@@ -56,5 +59,9 @@ public class TransferesController implements Initializable {
 
     public static Product getProduct() {
         return product;
+    }
+
+    public static TransferesController getTransferesController() {
+        return transferesController;
     }
 }

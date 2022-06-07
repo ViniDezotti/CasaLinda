@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
 
-<Pane fx:id="Background" prefHeight="670" prefWidth="1026" stylesheets="@styles/screens.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.visual.casalinda.HomeController">
+<Pane fx:id="Background" prefHeight="670" prefWidth="1026" stylesheets="@styles/screens.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.casalinda.HomeController">
    <TableView fx:id="table" layoutX="95.0" layoutY="85.0" prefHeight="367.0" prefWidth="836.0">
      <columns>
          <TableColumn fx:id="nameColumn" prefWidth="129.0" text="Nome" />
@@ -31,17 +28,4 @@
          <Label fx:id="sellsLabel" layoutX="694.0" layoutY="40.0" styleClass="valuesLabel" text="0" />
       </children>
    </Pane>
-   <RadioButton fx:id="productButton" layoutX="380.0" layoutY="14.0" mnemonicParsing="false" selected="true" text="Produto">
-      <font>
-         <Font name="System Bold" size="14.0" />
-      </font>
-      <toggleGroup>
-         <ToggleGroup fx:id="search" />
-      </toggleGroup>
-   </RadioButton>
-   <RadioButton fx:id="categoryButton" layoutX="523.0" layoutY="14.0" mnemonicParsing="false" text="Categoria" toggleGroup="$search">
-      <font>
-         <Font name="System Bold" size="14.0" />
-      </font>
-   </RadioButton>
 </Pane>

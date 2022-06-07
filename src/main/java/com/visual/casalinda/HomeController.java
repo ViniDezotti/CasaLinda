@@ -45,7 +45,6 @@ public class HomeController implements Initializable {
         categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
         ProductsSQL productsSQL = new ProductsSQL();
         productList = productsSQL.SearchProduct();
-        System.out.println(productList);
         table.setItems(FXCollections.observableArrayList(productList));
     }
 
@@ -53,5 +52,6 @@ public class HomeController implements Initializable {
         MovementSQL movementSQL = new MovementSQL();
         //String text = movementSQL.
         //valueLabel.setText();
+        sellsLabel.setText(movementSQL.transfersDay());
     }
 }

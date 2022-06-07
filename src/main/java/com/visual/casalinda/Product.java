@@ -26,7 +26,6 @@ public class Product {
         productList.add(this);
     }
 
-
     public String getName() {
         return name;
     }
@@ -72,7 +71,8 @@ public class Product {
     }
 
     public boolean removeQuantity(int value){
-        if((this.quantity -= value) >= 0){
+        int quantAtual = this.quantity;
+        if((quantAtual -= value) >= 0){
             this.quantity -= value;
             return true;
         }

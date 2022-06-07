@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -30,8 +31,8 @@ public class HistoricController implements Initializable {
         codeColumn.setCellValueFactory(new PropertyValueFactory<>("code"));
         qtdColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
-        valueColumn.setCellValueFactory(new PropertyValueFactory<>("value_unity"));
-        totalColumn.setCellValueFactory(new PropertyValueFactory<>("value_total"));
+        valueColumn.setCellValueFactory(new PropertyValueFactory<>("value"));
+        totalColumn.setCellValueFactory(new PropertyValueFactory<>("total"));
         dataColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         MovementSQL movementSQL = new MovementSQL();
         movementList = movementSQL.SearchProduct();

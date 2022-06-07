@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,22 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" styleClass="Bar" stylesheets="@styles/menuStyle.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.visual.casalinda.MenuController">
+<AnchorPane fx:id="Background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" styleClass="Bar" stylesheets="@styles/menuStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.casalinda.MenuController">
     <children>
-        <AnchorPane id="barSup" fx:id="TopBar" prefHeight="50.0" prefWidth="1080.0" styleClass="Bar">
-            <children>
-                <TextField fx:id="searchField" layoutX="390.0" layoutY="8.0" prefHeight="35.0" prefWidth="300.0" promptText="Procure aqui">
-                    <font>
-                        <Font size="15.0" />
-                    </font>
-                </TextField>
-                <ImageView fx:id="searchButton" fitHeight="25.0" fitWidth="25.0" layoutX="656.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" styleClass="Images">
-                    <image>
-                        <Image url="@images/lupa.png" />
-                    </image>
-                </ImageView>
-            </children>
-        </AnchorPane>
+        <AnchorPane id="barSup" fx:id="TopBar" prefHeight="50.0" prefWidth="1080.0" styleClass="Bar" />
         <AnchorPane fx:id="pane1" layoutX="323.0" layoutY="192.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
         <AnchorPane layoutX="54.0" layoutY="50.0" prefHeight="670.0" prefWidth="1026.0">
             <children>
