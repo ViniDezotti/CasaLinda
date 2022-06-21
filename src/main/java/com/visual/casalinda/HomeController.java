@@ -57,7 +57,9 @@ public class HomeController implements Initializable {
 
     public void showValues(){
         MovementSQL movementSQL = new MovementSQL();
-        sellsLabel.setText(movementSQL.transfersDay());
+        sellsLabel.setText(String.valueOf(movementSQL.transfersDay()));
+        profitLabel.setText(String.valueOf("R$" + movementSQL.profitDay()));
+        valueLabel.setText(String.valueOf("R$" + movementSQL.valueDay()));
     }
 
     public static HomeController getHomeController() {
