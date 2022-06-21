@@ -22,6 +22,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -42,6 +43,14 @@ public class MenuController implements Initializable {
 
     @FXML
     private StackPane contentArea;
+
+    @FXML
+    private TextField searchField;
+
+    @FXML
+    private ImageView searchButton;
+
+    private int screen = 1;
 
     public void initialize(URL location, ResourceBundle resources) {
         pane1.setVisible(false);
@@ -105,6 +114,9 @@ public class MenuController implements Initializable {
     }
 
     public void home() {
+        screen = 1;
+        searchField.setVisible(true);
+        searchButton.setVisible(true);
         try {
             Parent fxml = FXMLLoader.load(getClass().getResource("home-view.fxml"));
             contentArea.getChildren().removeAll();
@@ -115,6 +127,9 @@ public class MenuController implements Initializable {
     }
 
     public void products(){
+        screen = 2;
+        searchField.setVisible(true);
+        searchButton.setVisible(true);
         try {
             Parent fxml = FXMLLoader.load(getClass().getResource("product-view.fxml"));
             contentArea.getChildren().removeAll();
@@ -125,6 +140,9 @@ public class MenuController implements Initializable {
     }
 
     public void transations() {
+        screen = 3;
+        searchField.setVisible(true);
+        searchButton.setVisible(true);
         try {
             Parent fxml = FXMLLoader.load(getClass().getResource("transfers-view.fxml"));
             contentArea.getChildren().removeAll();
@@ -135,6 +153,9 @@ public class MenuController implements Initializable {
     }
 
     public void historic() {
+        screen = 4;
+        searchField.setVisible(false);
+        searchButton.setVisible(false);
         try {
             Parent fxml = FXMLLoader.load(getClass().getResource("historic-view.fxml"));
             contentArea.getChildren().removeAll();
@@ -142,6 +163,7 @@ public class MenuController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
     @FXML
@@ -155,5 +177,12 @@ public class MenuController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void search(){
+        String objective = searchField.getText();
+        if(screen == 1) HomeController.getHomeController().showtest(objective);
+        else if(screen == 2) ProductController.getProductController().showtest(objective);
+        else if(screen == 3)TransferesController.getTransferesController().showtest(objective);
     }
 }

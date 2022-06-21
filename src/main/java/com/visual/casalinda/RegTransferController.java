@@ -10,8 +10,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class RegTransferController implements Initializable {
@@ -31,6 +31,7 @@ public class RegTransferController implements Initializable {
         product = TransferesController.getProduct();
         nameField.setText(product.getName());
         codeField.setText(product.getCode());
+        date.setValue(LocalDate.now());
     }
 
     public void transference() throws IOException {
@@ -52,7 +53,7 @@ public class RegTransferController implements Initializable {
 
         LocalDate data = date.getValue();
         Movement movement = new Movement();
-        movement.addMovement(product, Integer.valueOf(qtdField.getText()), type, Date.valueOf(data), Float.valueOf(valueField.getText()));
+        movement.addMovement(product, Integer.valueOf(qtdField.getText()), type, data, Float.valueOf(valueField.getText()));
         MovementSQL movementSQL = new MovementSQL();
         movementSQL.registration(movement);
 

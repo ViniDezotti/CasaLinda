@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane id="Background" prefHeight="670" prefWidth="1026" stylesheets="@styles/screens.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.casalinda.HistoricController">
+<Pane id="Background" prefHeight="670" prefWidth="1026" stylesheets="@styles/screens.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.visual.casalinda.HistoricController">
    <children>
-      <TableView fx:id="table" layoutX="95.0" layoutY="93.0" prefHeight="493.0" prefWidth="836.0">
+      <TableView fx:id="table" layoutX="95.0" layoutY="197.0" prefHeight="389.0" prefWidth="836.0">
          <columns>
             <TableColumn fx:id="nameColumn" prefWidth="129.0" text="Nome" />
             <TableColumn fx:id="codeColumn" text="Código" />
@@ -20,5 +23,14 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
+      <RadioButton fx:id="inButton" layoutX="408.0" layoutY="139.0" mnemonicParsing="false" selected="true" text="Entrada">
+         <toggleGroup>
+            <ToggleGroup fx:id="select" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="outButton" layoutX="548.0" layoutY="139.0" mnemonicParsing="false" text="Saída" toggleGroup="$select" />
+      <DatePicker fx:id="date1" layoutX="295.0" layoutY="69.0" />
+      <DatePicker fx:id="date2" layoutX="548.0" layoutY="69.0" />
+      <Label layoutX="295.0" layoutY="45.0" prefHeight="17.0" prefWidth="61.0" text="Início:" />
+      <Label layoutX="548.0" layoutY="45.0" prefHeight="17.0" prefWidth="61.0" text="Término:" />
    </children>
 </Pane>

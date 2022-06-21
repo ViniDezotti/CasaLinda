@@ -29,8 +29,8 @@ public class TransferesController implements Initializable {
 
     private static TransferesController transferesController;
     public void initialize(URL location, ResourceBundle resources) {
-        transferesController = this;
         showTable();
+        transferesController = this;
     }
     @FXML
     public void showTable() {
@@ -45,9 +45,21 @@ public class TransferesController implements Initializable {
         table.setItems(FXCollections.observableArrayList(productList));
     }
 
+    public void showtest(String objective){
+        String SQL;
+        SQL = "SELECT * FROM product WHERE name LIKE '%" + objective + "%'";
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        codeColumn.setCellValueFactory(new PropertyValueFactory<>("code"));
+        quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        descColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+        categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
+        ProductsSQL productsSQL = new ProductsSQL();
+        productList = productsSQL.teste(SQL);
+        table.setItems(FXCollections.observableArrayList(productList));
+    }
+
     public void registerTransfer() throws IOException {
         product = (Product) table.getSelectionModel().getSelectedItem();
-
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("regTransfer-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 334, 478);
         Stage stage = new Stage();

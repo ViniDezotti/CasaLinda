@@ -2,6 +2,7 @@ package com.visual.casalinda;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,7 @@ public class Movement {
     private float value;
 
     private float total;
-    private Date date;
+    private java.util.Date date;
 
     private static List<Movement> movementList = new ArrayList<>();
 
@@ -25,12 +26,12 @@ public class Movement {
 
     }
 
-    public void addMovement(Product product, int quantity, String type, Date date, float value) throws IOException {
+    public void addMovement(Product product, int quantity, String type, LocalDate date, float value) throws IOException {
         this.name = product.getName();
         this.code = product.getCode();
         this.quantity = quantity;
         this.type = type;
-        this.date = date;
+        this.date = Date.valueOf(date);
         this.value = value;
         this.total = value * ((float) getQuantity());
         movementList.add(this);
@@ -68,7 +69,7 @@ public class Movement {
         this.quantity = quantity;
     }
 
-    public Date getDate() {
+    public java.util.Date getDate() {
         return date;
     }
 

@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -62,6 +63,19 @@ public class ProductController implements Initializable {
         ProductsSQL productsSQL = new ProductsSQL();
         productList = productsSQL.SearchProduct();
         System.out.println(productList);
+        table.setItems(FXCollections.observableArrayList(productList));
+    }
+
+    public void showtest(String objective){
+        String SQL;
+        SQL = "SELECT * FROM product WHERE name LIKE '%" + objective + "%'";
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        codeColumn.setCellValueFactory(new PropertyValueFactory<>("code"));
+        qtdColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        descColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+        categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
+        ProductsSQL productsSQL = new ProductsSQL();
+        productList = productsSQL.teste(SQL);
         table.setItems(FXCollections.observableArrayList(productList));
     }
 

@@ -1,5 +1,7 @@
 package com.visual.casalinda;
 
+import javafx.scene.control.Menu;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -66,12 +68,34 @@ public class ProductsSQL {
     }
 
     public ArrayList<Product> SearchProduct(){
-        String select = "SELECT * FROM product";
+        String select;
+        select = "SELECT * FROM product";
         connection = DatabaseConnection.getConnection();
         try{
             statement = connection.prepareStatement(select);
             resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                Product product = new Product();
+                product.setName(resultSet.getString("name"));
+                product.setCode(resultSet.getString("code"));
+                product.setQuantity(resultSet.getInt("quantity"));
+                product.setDescription(resultSet.getString("description"));
+                product.setCategory(resultSet.getString("category"));
+                lista.add(product);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return lista;
+    }
 
+    public ArrayList<Product> teste(String test){
+        /*String select;
+        select = "SELECT * FROM product";*/
+        connection = DatabaseConnection.getConnection();
+        try{
+            statement = connection.prepareStatement(test);
+            resultSet = statement.executeQuery();
             while (resultSet.next()){
                 Product product = new Product();
                 product.setName(resultSet.getString("name"));

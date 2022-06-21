@@ -1,10 +1,10 @@
 package com.visual.casalinda;
 
-import javax.xml.datatype.DatatypeConfigurationException;
-import java.sql.*;
-import java.text.SimpleDateFormat;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class MovementSQL {
     Connection connection;
@@ -15,7 +15,6 @@ public class MovementSQL {
     public void registration(Movement movement) {
         String insert = "INSERT INTO movement (name,code,quantity,type,value_unity, value_total, date) VALUES (?, ?, ?, ?, ?, ?, ?)";
         connection = DatabaseConnection.getConnection();
-
         float total = movement.getValue() * (float) movement.getQuantity();
         try {
             statement = connection.prepareStatement(insert);
@@ -25,7 +24,7 @@ public class MovementSQL {
             statement.setString(4, movement.getType());
             statement.setFloat(5, movement.getValue());
             statement.setFloat(6, total);
-            statement.setDate(7, movement.getDate());
+            statement.setDate(7, (Date) movement.getDate());
             statement.execute();
             statement.close();
             connection.close();
@@ -34,11 +33,10 @@ public class MovementSQL {
         }
     }
 
-    public ArrayList<Movement> SearchProduct() {
-        String select = "SELECT * FROM movement";
+    public ArrayList<Movement> SearchProduct(String SQL) {
         connection = DatabaseConnection.getConnection();
         try {
-            statement = connection.prepareStatement(select);
+            statement = connection.prepareStatement(SQL);
             resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
@@ -63,24 +61,24 @@ public class MovementSQL {
     }
 
     public String transfersDay() {
-        String timeToday = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+        /*String timeToday = new SimpleDateFormat("dd").format(Calendar.getInstance().getTime());
         Date data =  java.sql.Date.valueOf(timeToday);
         System.out.println(data);
 
-        String find = "SELECT COUNT (*) FROM movement WHERE date LIKE ?";
+        String find = "SELECT COUNT (*) FROM movement WHERE day(date) = ?";
         connection = DatabaseConnection.getConnection();
 
         try {
             System.out.println(resultSet);
-
             statement = connection.prepareStatement(find);
-            statement.setDate(1, data);
+            statement.setDate(Date LocalDate.now());
             resultSet = statement.executeQuery();
             System.out.println(resultSet.getDate("data").toString());
             resultSet.next();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return String.valueOf(resultSet);
+        return String.valueOf(resultSet);*/
+        return "a";
     }
 }
